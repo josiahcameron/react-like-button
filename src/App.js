@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
 function App() {
+  const [presses, setPress] = useState(0);
+
+  if (presses === 1) {
+    return (
+      <div>
+        <button onClick={() => setPress(presses + 1)}>{presses} like</button>
+      </div>
+    );
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={() => setPress(presses + 1)}>{presses} likes</button>
     </div>
   );
 }
